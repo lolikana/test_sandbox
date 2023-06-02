@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
   build: {
@@ -7,6 +8,12 @@ export default defineConfig({
     minify: 'esbuild',
     emptyOutDir: true,
     copyPublicDir: true,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@libs': path.resolve(__dirname, './src/libs'),
+    },
   },
   server: {
     port: 4000,
