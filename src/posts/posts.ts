@@ -6,7 +6,11 @@ export function savePost(postData: any) {
   return sendDataRequest(postData);
 }
 
-export function extractPostData(form: FormData) {
+export function extractPostData(form: {
+  title: string;
+  content: string;
+  get(identifier: any): any;
+}) {
   const title = form.get('title') as string;
   const content = form.get('content') as string;
 
