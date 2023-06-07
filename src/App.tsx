@@ -12,7 +12,14 @@ function App() {
 
   return (
     <div>
-      <Link to={'/multiple-elements'}>Multiple Elements</Link>
+      <ul>
+        <li>
+          <Link to={'/multiple-elements'}>Multiple Elements</Link>
+        </li>
+        <li>
+          <Link to={'/user'}>User</Link>
+        </li>
+      </ul>
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
