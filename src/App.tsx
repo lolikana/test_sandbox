@@ -19,6 +19,9 @@ function App() {
         <li>
           <Link to={'/user'}>User</Link>
         </li>
+        <li>
+          <Link to={'/input-callback'}>Input Callback test</Link>
+        </li>
       </ul>
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
