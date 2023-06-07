@@ -44,4 +44,15 @@ describe('User Page', () => {
 
     await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
   });
+
+  it("should render user's name", async () => {
+    render(
+      <MemoryRouter>
+        <UserPage />
+      </MemoryRouter>
+    );
+
+    const userName = await screen.findByText(/Jack/);
+    expect(userName).toBeInTheDocument();
+  });
 });

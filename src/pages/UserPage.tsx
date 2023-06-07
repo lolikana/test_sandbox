@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import User from '../components/User';
+
 const UserPage = () => {
   const [user, setUser] = useState<{ name: string; email: string } | null>(null);
   const [error, setError] = useState<string>('');
@@ -10,10 +12,14 @@ const UserPage = () => {
       .catch((error: { message: string }) => setError(error.message));
   }, []);
 
+  if (error) {
+    return <span>{error}</span>;
+  }
+
   return (
     <div>
       <h1>User Page</h1>
-      {user ? <p>User</p> : <div>Loading...</div>}
+      {user ? <User name={user.name} email={user.email} /> : <div>Loading...</div>}
     </div>
   );
 };
