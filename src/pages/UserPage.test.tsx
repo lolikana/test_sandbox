@@ -55,4 +55,16 @@ describe('User Page', () => {
     const userName = await screen.findByText(/Jack/);
     expect(userName).toBeInTheDocument();
   });
+
+  it('should show an error message', async () => {
+    vi.spyOn(global, 'fetch').mockRejectedValueOnce({ message: 'API is down' });
+
+    render(
+      <MemoryRouter>
+        <UserPage />
+      </MemoryRouter>
+    );
+    const errorMessage = await screen.findByText('API is down');
+    expect(errorMessage).toBeInTheDocument();
+  });
 });
