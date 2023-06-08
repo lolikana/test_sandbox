@@ -34,4 +34,14 @@ describe('dom', () => {
 
     expect(errorPara).toBeNull();
   });
+
+  it('should output the provided message in the error paragraph', () => {
+    const testErrorMessage = 'Test';
+    showError(testErrorMessage);
+
+    const errorsEl = document.getElementById('errors');
+    const errorPara = errorsEl.firstElementChild;
+
+    expect(errorPara.textContent).toBe(testErrorMessage);
+  });
 });
