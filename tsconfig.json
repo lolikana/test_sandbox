@@ -108,6 +108,13 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "exclude": ["./node_modules"],
-  "include": ["./src", "**/*.ts", "**/*.tsx", "**/*.test.tsx"],
+  "include": [
+    "./src",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.test.tsx",
+    "**/*.test.tsx.snap",
+    "__snapshots__/UserPage.test.js.snap"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

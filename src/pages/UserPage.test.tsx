@@ -2,6 +2,7 @@ import { render, screen, waitForElementToBeRemoved } from '@testing-library/reac
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 
+import renderWithRouter from '../../__tests__/renderWithRouter';
 import UserPage from './UserPage';
 
 const testResponseData = { name: 'Jack', email: 'jack@test.com' };
@@ -66,5 +67,17 @@ describe('User Page', () => {
     );
     const errorMessage = await screen.findByText('API is down');
     expect(errorMessage).toBeInTheDocument();
+  });
+
+  it('should match the snapshot loading screen', async () => {
+    const { asFragment } = renderWithRouter(<UserPage />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it('should match the snapshot', async () => {
+    const { asFragment } = renderWithRouter(<UserPage />);
+    await screen.findByText(/Jack/);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
