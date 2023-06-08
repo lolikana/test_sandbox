@@ -1,61 +1,20 @@
 {
-  "name": "my-vite-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "mocks-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint-staged": "lint-staged",
-    "prettier-format": "prettier --config .prettierrc './**/*.{ts,css,scss,json}' --write",
-    "test": "vitest --run --reporter verbose",
-    "test:watch": "vitest",
-    "coverage": "vitest run --coverage"
+    "start": "http-server -c-1",
+    "test": "vitest --run --environment happy-dom"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "lint-staged": {
-    "./**/*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix -f table"
-    ],
-    "./**/*.{scss,css,json,cjs}": "prettier --write"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "http-server": "^14.1.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "@typescript-eslint/parser": "^5.59.9",
-    "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.42.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-formatter-table": "^7.32.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "husky": "^8.0.3",
-    "jsdom": "^22.1.0",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8",
-    "react-router-dom": "^6.12.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.9",
-    "vitest": "^0.31.4"
+    "happy-dom": "^2.55.0",
+    "vitest": "^0.9.3"
   }
 }
